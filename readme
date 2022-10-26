@@ -1,0 +1,11 @@
+# Prova Compsis
+
+## Como executar o código
+Para executar o código, basta seguir os passos abaixo:
+
+- Alterar a pasta na 'linha 16' do arquivo 'docker-compose.yml' para a pasta correspondente do diretorio clonado
+- Criar uma pasta dentro 'input' dentro da pasta 'compsis'
+- Colocar os arquivos .mp4 e .txt na pasta 'input'
+- Executar o comando 'docker-compose up -d'
+- Utilizar o Software Insomnia para fazer requests
+- Exportar request no Insomnia com arquivo 'Insomnia_2022-10-25.json'
