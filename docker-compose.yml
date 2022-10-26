@@ -1,0 +1,27 @@
+version: "3.1"
+
+services:
+  compsis:
+    image: compsis
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - MODEL_PATH=local/models/yolov7.pt
+    hostname: api_apolo
+    build:
+      context: ./
+      dockerfile: compsis/Dockerfile
+    container_name: compsis
+    volumes:
+      - "/home/lucas/Área de Trabalho/prova/compsis/:/app/"
+    ports:
+      - 5000:5000
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
